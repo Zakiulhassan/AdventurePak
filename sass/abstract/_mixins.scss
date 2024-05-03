@@ -1,0 +1,56 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Media Query Manager
+// 0-600 = Phone
+// 600 - 900 = Tablet Portrait
+// 900 - 1200 = Tablet Landscape
+// 1200 - 1800 = Desktop [Where normal styles falls]
+// !800+ = Big Screens
+
+// $breakpoints choices arguements:
+// - Phone
+// - Tab-Portrait
+// - Tab-landscape
+// - Desktop
+// - Big-Desktop
+
+@mixin respond($breakpoints) {
+  @if $breakpoints == Phone {
+    @media only screen and (max-width: 37.5rem) {
+      //600px
+      @content;
+    }
+  }
+  @if $breakpoints == Tab-Portrait {
+    @media only screen and (max-width: 56.25em) {
+      //900px
+      @content;
+    }
+  }
+  @if $breakpoints == Tab-landscape {
+    @media only screen and (max-width: 75em) {
+      //1200px
+      @content;
+    }
+  }
+
+  @if $breakpoints == Big-Desktop {
+    @media only screen and (min-width: 112.5em) {
+      //1800px
+      @content;
+    }
+  }
+}

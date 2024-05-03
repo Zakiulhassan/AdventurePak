@@ -1,0 +1,44 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  //1rem setting
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  scroll-behavior: smooth;
+
+  // Media Queries
+
+  @include respond(Big-Desktop) {
+    //width < 1200
+    font-size: 75%; //1 rem = 12px; 12px/16px = 75%
+  }
+  @include respond(Tab-landscape) {
+    //width < 900
+    font-size: 56.25%; //1 rem = 9px; 9px/16px = 56.25%
+  }
+  @include respond(Tab-Portrait) {
+    //width < 600
+    font-size: 50%; //1 rem = 8px; 8px/16px = 50%
+  }
+  @include respond(Phone) {
+    font-size: 50%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  color: $clr-dark;
+
+  @include respond(Tab-Portrait) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: $clr-pri;
+  color: $clr-txt-light;
+}

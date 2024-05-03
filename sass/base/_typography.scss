@@ -1,0 +1,87 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: $clr-txt-light;
+  padding: 3rem;
+}
+.heading-primary {
+  color: $clr-txt-light;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+
+  &--main {
+    display: block;
+    font-size: 60px;
+    font-weight: 600;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 1s ease;
+
+    @include respond(Phone) {
+      letter-spacing: 1rem;
+      font-size: 6rem;
+    }
+  }
+
+  &--sub {
+    display: block;
+    font-size: 20px;
+    letter-spacing: 16px;
+    animation: moveInRight 1s ease;
+    margin-bottom: 60px;
+    margin-left: -15px;
+
+    @include respond(Tab-Portrait) {
+      letter-spacing: 0.5rem;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+    @include respond(Phone) {
+      letter-spacing: 0.5rem;
+      font-size: 2rem;
+      font-weight: 500;
+    }
+  }
+}
+.heading-sec {
+  font-family: "Outfit", sans-serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: bolder;
+  background-image: linear-gradient(to right, $clr-pri, $clr-sec);
+  display: inline-block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 2px;
+  transition: all 0.2s;
+
+  @include respond(Tab-Portrait) {
+    font-size: 2.5rem;
+  }
+  @include respond(Phone) {
+    font-size: 2rem;
+  }
+
+  &:hover {
+    transform: skewY(1.5deg) skewX(10deg);
+    text-shadow: 0.5rem 1rem 2rem rgba($clr-dark, 0.4);
+  }
+}
+
+.heading-tertiary {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: $def-font-size;
+  color: $clr-grey-1;
+  text-transform: uppercase;
+}
+.paragraph {
+  font-size: $def-font-size;
+  color: $clr-grey;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
